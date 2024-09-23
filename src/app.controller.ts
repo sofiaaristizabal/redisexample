@@ -9,7 +9,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  @CacheKey('route')
+  @CacheKey('route') //It defines a custom key for storing the cached response in memory
   @CacheTTL(60)
   async get() {
     return this.appService.get();
